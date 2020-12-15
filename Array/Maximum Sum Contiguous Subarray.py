@@ -12,7 +12,7 @@ def kadanes_algo(input_list):
         if max_sum_with_ith > max_sum:
             max_sum = max_sum_with_ith
             max_sum_indexes = max_sum_with_ith_indexes
-    print("maximum sum: (from this index exclusive, to this index inclusive]")
+    print("maximum sum: (a, b] | (from index a exclusive, to index b inclusive]")
     return str(max_sum) + ': ' + '(' + str(max_sum_indexes[0]) + ', ' + str(max_sum_indexes[1]) + ']'
 
 
