@@ -1,2 +1,2 @@
 # Programming_Problems
-This repository consists of various frequently asked problems and their solutions
+This repository consists of solutions to various frequently asked problems.
