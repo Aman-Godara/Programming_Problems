@@ -1,10 +1,10 @@
-# Q.2 Servers: One server sends request to other in encoded form. Encoding scheme is as follows: a -> 1, b -> 2, ......, e -> 5, z -> 26
-# Input: "11”    Possbile decodings: (“aa”, ‘k”)
-# Input: “121"   Possbile decodings: (“aba”, “au”, “la”)
-# Input: "101”   Possbile decodings: ("ja")
-# Input: “127"   Possbile decodings: ("abg", "lg")
-# Input: “9999"  Possbile decodings: ("iiii")
-# Task is to find all the possible decodings of an input.
+"""Q.2 Servers: One server sends request to other in encoded form. Encoding scheme is as follows: a -> 1, b -> 2, ......, e -> 5, z -> 26
+Input: "11”    Possbile decodings: (“aa”, ‘k”)
+Input: “121"   Possbile decodings: (“aba”, “au”, “la”)
+Input: "101”   Possbile decodings: ("ja")
+Input: “127"   Possbile decodings: ("abg", "lg")
+Input: “9999"  Possbile decodings: ("iiii")
+Task is to find all the possible decodings of an input"""
 
 
 def decodings(past, i, signal):
@@ -39,8 +39,10 @@ def add_str_to_strlist(str_add, str_list):
     else:
         return [str_add]
 
+# Driver Code from here
+input_signal1 = '1211'
+input_signal2 = '213312'
 
-input_signal = '1211'
-
-print(decodings('', 0, input_signal))
+print(decodings('', 0, input_signal1))
+print(decodings('', 0, input_signal2))
 # Note: Dynamic Programming can be implemented in the above solution to further enhance the efficiency at the cost of memory
