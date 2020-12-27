@@ -15,5 +15,6 @@ def kadanes_algo(input_list):
     print("maximum sum: (a, b] | (from index a exclusive, to index b inclusive]")
     return str(max_sum) + ': ' + '(' + str(max_sum_indexes[0]) + ', ' + str(max_sum_indexes[1]) + ']'
 
-
-print(kadanes_algo([-4, -2, -3, -4, -5]))
+# Driver Code from here
+arr1 = [-4, -2, -3, -4, -5]
+print(kadanes_algo(arr1))
