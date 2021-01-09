@@ -5,15 +5,11 @@ to be removed from arr[] such that the remaining array is non-decreasingly sorte
 def findShortestSubarrayLength(arr):
     left_pointer = 0
     right_pointer = len(arr) - 1
-    updated = True
-    while left_pointer < right_pointer and updated:
-        updated = False
-        if arr[left_pointer] <= arr[left_pointer + 1]:
-            left_pointer = left_pointer + 1
-            updated = True
-        if arr[right_pointer - 1] <= arr[right_pointer]:
-            right_pointer = right_pointer - 1
-            updated = True
+    while left_pointer < right_pointer and arr[left_pointer] <= arr[left_pointer + 1]:
+        left_pointer = left_pointer + 1
+    
+    while left_pointer < right_pointer and arr[right_pointer - 1] <= arr[right_pointer]:
+        right_pointer = right_pointer - 1
 
     if left_pointer < right_pointer:
         # left_pointer hasn't crossed right_pointer
