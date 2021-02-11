@@ -30,18 +30,15 @@ def nextSmaller(arr):
     stack = []
     for i in range(len(arr) - 1, -1, -1):
         current = arr[i]
-        added_current = False
+        next_smaller = -1
         while stack:
             face = stack.pop()
             if current > face:
                 stack.append(face)
-                stack.append(current)
-                added_current = True
-                print(str(current) + ':', face)
+                next_smaller = face
                 break
-        if not added_current:
-            stack.append(current)
-            print(str(current) + ':', -1)
+        stack.append(current)
+        print(str(current) + ':', next_smaller)
 
 
 nextSmaller([1, 3, 2, 4, 12, 12, 3, 24, 5, 2, 5])
