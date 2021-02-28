@@ -32,8 +32,7 @@ def ally(n: int):
             calculate_from[current_index] = start - 1
         for j in range(end, start - 1, -1):
             next_sum += allies(current_index + 1, j, equal and j == end)
-            if not equal:
-                dp[current_index][j] = next_sum
+            dp[current_index][j] = next_sum
         return next_sum
 
     return allies(0, 0, True) - 1
