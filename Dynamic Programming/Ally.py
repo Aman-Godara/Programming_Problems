@@ -15,18 +15,21 @@ def ally(n: int):
     digits = str(n)
     length = len(digits)
     dp = [None] * length
+    calculate_from = [9] * length
     for i in range(length):
         dp[i] = [None] * 10
 
     def allies(current_index: int, start: int, equal: bool):
         if current_index == length:
             return 1
-        end = 9
-        if equal:
-            end = int(digits[current_index])
-        elif dp[current_index][start] is not None:
-            return dp[current_index][start]
+        end = int(digits[current_index])
         next_sum = 0
+        if not equal:
+            end = calculate_from[current_index]
+            if end < start:
+                return dp[current_index][start]
+            next_sum = dp[current_index][end + 1] if end < 9 else 0
+            calculate_from[current_index] = start - 1
         for j in range(end, start - 1, -1):
             next_sum += allies(current_index + 1, j, equal and j == end)
             if not equal:
